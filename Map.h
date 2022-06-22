@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SDL2/SDL.h"
+#include <string>
 
 class Map
 {
@@ -8,15 +9,7 @@ class Map
 		Map();
 		~Map();
 
-		void loadMap(int arr[20][25]);
-		void drawMap();
+		static void loadMap(std::string path, int sizeX, int sizeY);
 
 	private:
-		SDL_Rect src, dest;
-		// textures
-		SDL_Texture* dirt;
-		SDL_Texture* grass;
-		SDL_Texture* water;
-
-		int map[20][25];
 };
